@@ -1,0 +1,58 @@
+﻿@model CreateMessageDto
+
+<section class="book_section layout_padding">
+    <!-- Rezervasyon bölümünün genel düzenini belirten bir bölüm -->
+    <div class="container">
+        <!-- İçeriği sınırlayan bir konteyner -->
+        <div class="heading_container">
+            <!-- Başlık için bir konteyner -->
+            <h2>
+                Bize Ulaşın
+            </h2>
+        </div>
+        <div class="row">
+            <!-- Satır düzenini temsil eden bir bölüm -->
+            <div class="col-md-6">
+                <!-- İki sütunlu bir düzenin sol tarafındaki sütun -->
+                <div class="form_container">
+                    <!-- Form elemanlarını içeren bir konteyner -->
+                    <form method="post" asp-action="SendMessage" asp-controller="Default">
+                        <!-- Kullanıcının adını girmesi için metin kutusu -->
+                        <div>
+                            <input type="text" class="form-control" placeholder="Adınız Soyadınız" asp-for="NameSurname" />
+                        </div>
+                        <!-- Telefon numarasını girmesi için metin kutusu -->
+                        <div>
+                            <input type="text" class="form-control" placeholder="Telefon Numaranız" asp-for="Phone" />
+                        </div>
+                        <!-- E-posta adresini girmesi için metin kutusu -->
+                        <div>
+                            <input type="email" class="form-control" placeholder="E-posta Adresiniz" asp-for="Mail" />
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Konu" asp-for="Subject" />
+                        </div>
+                        <div>
+                            <textarea asp-for="MessageContent" rows="10" placeholder="Buraya Mesajınızı Yazabilirsiniz" class="form-control"></textarea>
+                        </div>
+
+                        <!-- Rezervasyonu tamamlamak için bir düğme -->
+                        <div class="btn_box">
+                            <button>
+                               Mesajı Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- İki sütunlu bir düzenin sağ tarafındaki sütun -->
+            <div class="col-md-6">
+                <!-- Harita bölümünü içeren bir konteyner -->
+                <div class="map_container ">
+                    <!-- Google Haritası'nı göstermek için bir alan -->
+                    <div id="googleMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

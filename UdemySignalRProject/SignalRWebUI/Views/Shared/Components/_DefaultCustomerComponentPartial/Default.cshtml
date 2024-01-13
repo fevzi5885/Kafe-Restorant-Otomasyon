@@ -1,0 +1,40 @@
+﻿@model List<ResultTestimonialDto>
+<section class="client_section layout_padding-bottom">
+    <!-- Müşteri görüşleri bölümünün genel düzenini belirten bir bölüm -->
+    <div class="container">
+        <!-- İçeriği sınırlayan bir konteyner -->
+        <div class="heading_container heading_center psudo_white_primary mb_45">
+            <!-- Başlık için bir konteyner -->
+            <h2>
+                Müşterilerimiz Ne Diyor
+            </h2>
+        </div>
+        <div class="carousel-wrap row">
+            <!-- Owl Carousel kullanılarak oluşturulan bir müşteri görüşleri kaydırıcısı -->
+            <div class="owl-carousel client_owl-carousel">
+                <!-- Birinci müşteri görüşü öğesi -->
+                @foreach(var item in Model)
+                {
+                <div class="item">
+                    <div class="box">
+                        <!-- Müşteri görüşü detayları için bir konteyner -->
+                        <div class="detail-box">
+                            <p>
+                              @item.Comment
+                            </p>
+                            <!-- Müşterinin adı -->
+                            <h6>
+                              @item.Name
+                            </h6>
+                        </div>
+                        <!-- Müşteri resmini içeren bir konteyner -->
+                        <div class="img-box">
+                            <img src="~/feane-1.0.0/images/client1.jpg" alt="" class="box-img">
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
